@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `td_ticketdetalle` (
   PRIMARY KEY (`tickd_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- Volcando datos para la tabla gestionincidenciastickets.td_ticketdetalle: ~37 rows (aproximadamente)
+-- Volcando datos para la tabla gestionincidenciastickets.td_ticketdetalle: ~39 rows (aproximadamente)
 /*!40000 ALTER TABLE `td_ticketdetalle` DISABLE KEYS */;
 INSERT INTO `td_ticketdetalle` (`tickd_id`, `tick_id`, `usu_id`, `tickd_descrip`, `fech_crea`, `est`) VALUES
 	(1, 1, 2, 'Te respondo', '2020-12-28 21:50:28', 1),
@@ -152,8 +152,8 @@ CREATE TABLE IF NOT EXISTS `tm_usuario` (
 /*!40000 ALTER TABLE `tm_usuario` DISABLE KEYS */;
 INSERT INTO `tm_usuario` (`usu_id`, `usu_nom`, `usu_ape`, `usu_correo`, `usu_pass`, `rol_id`, `fech_crea`, `fech_modi`, `fech_elim`, `est`) VALUES
 	(1, 'Mario', 'Bross', 'mbross@gnail.com', '123456', 1, '2021-02-04 21:23:22', NULL, NULL, 1),
-	(2, 'Jesus', 'Condori', 'admin@gmail.com', '123456', 2, '2021-02-04 21:23:22', NULL, NULL, 1),
-	(3, 'Roger', 'Colque', 'rogergcc@gmail.com', '1234', 1, '2021-02-04 21:23:22', '0000-00-00 00:00:00', NULL, 1);
+	(2, 'Jesus', 'Condori', 'admin@gmail.com', '1234', 2, '2021-02-04 21:23:22', NULL, NULL, 1),
+	(3, 'Juanito', 'Alimaña', 'soporte@gmail.com', '1234', 1, '2021-02-04 21:23:22', '0000-00-00 00:00:00', NULL, 1);
 /*!40000 ALTER TABLE `tm_usuario` ENABLE KEYS */;
 
 -- Volcando estructura para procedimiento gestionincidenciastickets.sp_d_usuario_01
