@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <?php require_once("../MainHead/head.php");?>
-	<title>AnderCode</>::Nuevo Ticket</title>
+	<title>GestionTicketsIncidencias</>::Nuevo Ticket</title>
 </head>
 <body class="with-side-menu">
 
@@ -35,7 +35,7 @@
 
 			<div class="box-typical box-typical-padding">
 				<p>
-					Desde esta ventana podra generar nuevos tickets de HelpDesk.
+					Desde esta ventana podra generar nuevos tickets de GestionTickets.
 				</p>
 
 				<h5 class="m-t-lg with-border">Ingresar Información</h5>

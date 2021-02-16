@@ -1,0 +1,9 @@
+.page-center-in{
+   
+   /* background-image: url(public/fondo.jpg); */
+
+   background-image: url("public/fondo.jpg"), url("paper.gif");
+   background-repeat: no-repeat, repeat;
+
+   
+}

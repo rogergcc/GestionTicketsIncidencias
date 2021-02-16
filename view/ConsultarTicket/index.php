@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <?php require_once("../MainHead/head.php");?>
-	<title>AnderCode</>::Consultar Ticket</title>
+	<title>GestionTicketsIncidencias</>::Consultar Ticket</title>
 </head>
 <body class="with-side-menu">
 

@@ -6,7 +6,7 @@
 
         protected function Conexion(){
             try {
-				$conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=andercode_helpdesk","root","");
+				$conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=gestionincidenciastickets","root","");
 				return $conectar;	
 			} catch (Exception $e) {
 				print "¡Error BD!: " . $e->getMessage() . "<br/>";
@@ -19,7 +19,7 @@
         }
         
         public function ruta(){
-			return "http://localhost:90/PERSONAL_HelpDesk/";
+			return "http://localhost/GestionTicketsIncidencias/";
 		}
 
     }
