@@ -19,7 +19,7 @@ function guardaryeditar(e){
             console.log(datos);
             $('#usuario_form')[0].reset();
             $("#modalmantenimiento").modal('hide');
-            $('#usuario_data').DataTable().ajax.reload();
+            $('#Equipo_data').DataTable().ajax.reload();
 
             swal({
                 title: "GestionTickets!",
@@ -32,7 +32,7 @@ function guardaryeditar(e){
 }
 
 $(document).ready(function(){
-    tabla=$('#usuario_data').dataTable({
+    tabla=$('#Equipo_data').dataTable({
         "aProcessing": true,
         "aServerSide": true,
         dom: 'Bfrtip',
@@ -40,13 +40,11 @@ $(document).ready(function(){
         lengthChange: false,
         colReorder: true,
         buttons: [		          
-                // 'copyHtml5',
-                // 'excelHtml5',
                 'csvHtml5',
                 'pdfHtml5'
                 ],
         "ajax":{
-            url: '../../controller/usuario.php?op=listar',
+            url: '../../controller/equipo.php?op=listar',
             type : "post",
             dataType : "json",						
             error: function(e){
@@ -118,7 +116,7 @@ function eliminar(usu_id){
 
             }); 
 
-            $('#usuario_data').DataTable().ajax.reload();	
+            $('#Equipo_data').DataTable().ajax.reload();	
 
             swal({
                 title: "GestionTickets!",
@@ -136,4 +134,4 @@ $(document).on("click","#btnnuevo", function(){
     $('#modalmantenimiento').modal('show');
 });
 
-init();
+//init();

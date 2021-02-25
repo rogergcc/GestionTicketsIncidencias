@@ -42,6 +42,12 @@
                         </a>
                     </li>
                     <li class="blue-dirty">
+                        <a href="..\MntEquipo\">
+                            <span class="glyphicon glyphicon-th"></span>
+                            <span class="lbl">Mantenimiento Equipo</span>
+                        </a>
+                    </li>
+                    <li class="blue-dirty">
                         <a href="..\ConsultarTicket\">
                             <span class="glyphicon glyphicon-th"></span>
                             <span class="lbl">Consultar Ticket</span>
