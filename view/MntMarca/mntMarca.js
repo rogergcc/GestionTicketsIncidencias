@@ -7,32 +7,59 @@ function init(){
 }
 
 function guardaryeditar(e){
-    e.preventDefault();
-	var formData = new FormData($("#usuario_form")[0]);
-    $.ajax({
-        url: "../../controller/usuario.php?op=guardaryeditar",
-        type: "POST",
-        data: formData,
-        contentType: false,
-        processData: false,
-        success: function(datos){    
-            console.log(datos);
-            $('#usuario_form')[0].reset();
-            $("#modalmantenimiento").modal('hide');
-            $('#usuario_data').DataTable().ajax.reload();
+    // $_POST["marca_nombre"],
+    // $_POST["marca_descripcion"]
 
-            swal({
-                title: "GestionTickets!",
-                text: "Completado.",
-                type: "success",
-                confirmButtonClass: "btn-success"
-            });
-        }
-    }); 
+    e.preventDefault();
+    var formData = new FormData($("#usuario_form")[0]);
+    if ($('#marca_nombre').val()=='' ){
+        swal("Advertencia!", "Campos Vacios", "warning");
+    }else{
+        $.ajax({
+            url: "../../controller/Marca.php?op=guardaryeditar",
+            type: "POST",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(datos){  
+                console.log("datos=>",datos);
+                const respuesta= JSON.parse(datos)
+
+                $('#usuario_form')[0].reset();
+                $("#modalmantenimiento").modal('hide');
+                $('#Marca_data').DataTable().ajax.reload();
+                
+                if (respuesta.estado=="1") {
+                    swal({
+                        title: "GestionTickets!",
+                        text: respuesta.mensaje,
+                        type: "success",
+                        confirmButtonClass: "btn-success"
+                    });
+                } else {
+                    swal({
+                        title: "GestionTickets",
+                        text: respuesta.mensaje,
+                        type: "error",
+                        confirmButtonClass: "btn-danger"
+                    });
+                }
+                
+
+            }  
+        }); 
+    }
+    
 }
 
+
+
 $(document).ready(function(){
-    tabla=$('#usuario_data').dataTable({
+    
+
+
+
+    tabla=$('#Marca_data').dataTable({
         "aProcessing": true,
         "aServerSide": true,
         dom: 'Bfrtip',
@@ -40,13 +67,11 @@ $(document).ready(function(){
         lengthChange: false,
         colReorder: true,
         buttons: [		          
-                // 'copyHtml5',
-                // 'excelHtml5',
                 'csvHtml5',
                 'pdfHtml5'
                 ],
         "ajax":{
-            url: '../../controller/usuario.php?op=listar',
+            url: '../../controller/Marca.php?op=listar',
             type : "post",
             dataType : "json",						
             error: function(e){
@@ -85,23 +110,22 @@ $(document).ready(function(){
     }).DataTable(); 
 });
 
-function editar(usu_id){
+function editar(marca_id){
     $('#mdltitulo').html('Editar Registro');
 
-    $.post("../../controller/usuario.php?op=mostrar", {usu_id : usu_id}, function (data) {
+    $.post("../../controller/Marca.php?op=mostrar", {marca_id : marca_id}, function (data) {
         data = JSON.parse(data);
-        $('#usu_id').val(data.usu_id);
-        $('#usu_nom').val(data.usu_nom);
-        $('#usu_ape').val(data.usu_ape);
-        $('#usu_correo').val(data.usu_correo);
-        $('#usu_pass').val(data.usu_pass);
-        $('#rol_id').val(data.rol_id).trigger('change');
+
+        $('#marca_id').val(data.marca_id);
+        $('#marca_nombre').val(data.marca_nombre);
+        $('#marca_descripcion').val(data.marca_descripcion);
+      
     }); 
 
     $('#modalmantenimiento').modal('show');
 }
 
-function eliminar(usu_id){
+function eliminar(marca_id){
     swal({
         title: "GestionTickets",
         text: "Esta seguro de Eliminar el registro?",
@@ -114,18 +138,30 @@ function eliminar(usu_id){
     },
     function(isConfirm) {
         if (isConfirm) {
-            $.post("../../controller/usuario.php?op=eliminar", {usu_id : usu_id}, function (data) {
+            $.post("../../controller/Marca.php?op=eliminar", {marca_id : marca_id}, function (data) {
 
+                const respuesta = JSON.parse(data);
+                $("#Marca_data").DataTable().ajax.reload();
+    
+                if (respuesta.estado == "1") {
+                  swal({
+                    title: "GestionTickets!",
+                    text: respuesta.mensaje,
+                    type: "success",
+                    confirmButtonClass: "btn-success",
+                  });
+                } else {
+                  swal({
+                    title: "GestionTickets",
+                    text: respuesta.mensaje,
+                    type: "error",
+                    confirmButtonClass: "btn-danger",
+                  });
+                }
             }); 
 
-            $('#usuario_data').DataTable().ajax.reload();	
-
-            swal({
-                title: "GestionTickets!",
-                text: "Registro Eliminado.",
-                type: "success",
-                confirmButtonClass: "btn-success"
-            });
+           
+                
         }
     });
 }
@@ -133,8 +169,13 @@ function eliminar(usu_id){
 $(document).on("click","#btnnuevo", function(){
     $('#mdltitulo').html('Nuevo Registro');
     $('#usuario_form')[0].reset();
+
+    // $('#marca_id').val(null);
+
     $("input[type=hidden]").val(null);
+
     $('#modalmantenimiento').modal('show');
+    
 });
 
 init();

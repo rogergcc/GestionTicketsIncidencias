@@ -12,14 +12,14 @@
                     <li class="blue-dirty">
                         <a href="..\NuevoTicket\">
                             <span class="glyphicon glyphicon-th"></span>
-                            <span class="lbl">Nuevo Ticket</span>
+                            <span class="lbl">Nuevo Incidencia</span>
                         </a>
                     </li>
 
                     <li class="blue-dirty">
                         <a href="..\ConsultarTicket\">
                             <span class="glyphicon glyphicon-th"></span>
-                            <span class="lbl">Consultar Ticket</span>
+                            <span class="lbl">Consultar Incidencias</span>
                         </a>
                     </li>
                 </ul>
@@ -35,10 +35,11 @@
                             <span class="lbl">Inicio</span>
                         </a>
                     </li>
+
                     <li class="blue-dirty">
-                        <a href="..\MntUsuario\">
+                        <a href="..\MntMarca\">
                             <span class="glyphicon glyphicon-th"></span>
-                            <span class="lbl">Mantenimiento Usuario</span>
+                            <span class="lbl">Mantenimiento Marca</span>
                         </a>
                     </li>
                     <li class="blue-dirty">
@@ -48,9 +49,30 @@
                         </a>
                     </li>
                     <li class="blue-dirty">
+                        <a href="..\MntDepartamento\">
+                            <span class="glyphicon glyphicon-th"></span>
+                            <span class="lbl">Mantenimiento Departamento</span>
+                        </a>
+                    </li>
+
+                    <li class="blue-dirty">
+                        <a href="..\MntUsuario\">
+                            <span class="glyphicon glyphicon-th"></span>
+                            <span class="lbl">Mantenimiento Usuario</span>
+                        </a>
+                    </li>
+                    <li class="blue-dirty">
+                        <a href="..\MntTrabajador\">
+                            <span class="glyphicon glyphicon-th"></span>
+                            <span class="lbl">Mantenimiento Trabajador</span>
+                        </a>
+                    </li>
+
+                    
+                    <li class="blue-dirty">
                         <a href="..\ConsultarTicket\">
                             <span class="glyphicon glyphicon-th"></span>
-                            <span class="lbl">Consultar Ticket</span>
+                            <span class="lbl">Consultar Incidencias</span>
                         </a>
                     </li>
                 </ul>

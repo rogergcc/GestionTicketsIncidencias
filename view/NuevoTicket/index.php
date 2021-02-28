@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <?php require_once("../MainHead/head.php");?>
-	<title>GestionTicketsIncidencias</>::Nuevo Ticket</title>
+	<title>GestionTicketsIncidencias</>::Nuevo Incidencia</title>
 </head>
 <body class="with-side-menu">
 
@@ -23,10 +23,10 @@
 				<div class="tbl">
 					<div class="tbl-row">
 						<div class="tbl-cell">
-							<h3>Nuevo Ticket</h3>
+							<h3>Nuevo Incidencia</h3>
 							<ol class="breadcrumb breadcrumb-simple">
 								<li><a href="#">Home</a></li>
-								<li class="active">Nuevo Ticket</li>
+								<li class="active">Nuevo Incidencia</li>
 							</ol>
 						</div>
 					</div>
@@ -35,7 +35,7 @@
 
 			<div class="box-typical box-typical-padding">
 				<p>
-					Desde esta ventana podra generar nuevos tickets de GestionTickets.
+					Desde esta ventana podra generar nuevos Incidencias de GestionTickets.
 				</p>
 
 				<h5 class="m-t-lg with-border">Ingresar Información</h5>

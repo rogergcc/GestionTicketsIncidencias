@@ -19,6 +19,7 @@
             parent::set_names();
             $sql="SELECT 
                 tm_ticket.tick_id,
+                tm_ticket.calificado,
                 tm_ticket.usu_id,
                 tm_ticket.cat_id,
                 tm_ticket.tick_titulo,
@@ -46,6 +47,7 @@
             parent::set_names();
             $sql="SELECT 
                 tm_ticket.tick_id,
+                 tm_ticket.calificado,
                 tm_ticket.usu_id,
                 tm_ticket.cat_id,
                 tm_ticket.tick_titulo,
@@ -72,7 +74,9 @@
             $conectar= parent::conexion();
             parent::set_names();
             $sql="SELECT 
+            
                 tm_ticket.tick_id,
+                tm_ticket.calificado,
                 tm_ticket.usu_id,
                 tm_ticket.cat_id,
                 tm_ticket.tick_titulo,
@@ -82,12 +86,14 @@
                 tm_usuario.usu_nom,
                 tm_usuario.usu_ape,
                 tm_categoria.cat_nom
+               
                 FROM 
                 tm_ticket
                 INNER join tm_categoria on tm_ticket.cat_id = tm_categoria.cat_id
                 INNER join tm_usuario on tm_ticket.usu_id = tm_usuario.usu_id
                 WHERE
                 tm_ticket.est = 1
+                
                 ";
             $sql=$conectar->prepare($sql);
             $sql->execute();
@@ -150,6 +156,24 @@
             $sql->bindValue(1, $tick_id);
             $sql->execute();
             return $resultado=$sql->fetchAll();
+        }
+
+        public function calificar_ticket($tick_id,$puntuacion){
+            $conectar= parent::conexion();
+            parent::set_names();
+            $sql="update tm_ticket 
+                set	
+                    tick_estado = 'Finalizado',
+                    calificado = 1,
+                    puntuacion=?
+                where
+                    tick_id = ?";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1, $puntuacion);
+            $sql->bindValue(2, $tick_id);
+            // $sql->execute();
+            // return $resultado=$sql->fetchAll();
+            return $sql->execute();
         }
 
         public function get_ticket_total(){

@@ -9,40 +9,28 @@
             </div>
             <form method="post" id="usuario_form">
                 <div class="modal-body">
-                    <input type="hidden" id="equipo_id" name="equipo_id">
+                    <input type="hidden" id="tick_id" name="tick_id">
 
                     <div class="form-group">
-                        <label class="form-label" for="codigo_bien">Codigo Bien</label>
-                        <input type="text" class="form-control" id="codigo_bien" name="codigo_bien" placeholder="Ingrese Nombre" required>
+                        <label class="form-label" for="tick_titulo">Incendencia</label>
+                        <input type="text" disabled class=" form-control" id="tick_titulo" name="tick_titulo" placeholder="Ingrese Nombre" required>
                     </div>
+                   
+
 
                     <fieldset class="form-group">
-                        <label class="form-label semibold" for="exampleInput">Marca</label>
-                        <select id="marca_id" name="marca_id" class="form-control">
-
+                        <label class="form-label semibold" for="exampleInput">Cuan Satisfeho esta de la atencion de su incidencia </label>
+         
+                        <select id="puntuacion" name="puntuacion" class="form-control">
+                            <option  value="0">Eliga un calificacion</option>
+                            <option value="5">5. Muy Satisfecho</option>
+                            <option value="4">4. Satisfecho</option>
+                            <option value="3">3. Ni satisfech ni insatisfecho</option>
+                            <option value="2">2. Insatisfecho</option>
+                            <option value="1">1. Muy insatisfecho</option>
                         </select>
                     </fieldset>
 
-                    <fieldset class="form-group">
-                        <label class="form-label semibold" for="exampleInput">Personal</label>
-                        <select id="personal_id" name="personal_id" class="form-control">
-
-                        </select>
-                    </fieldset>
-
-                    <fieldset class="form-group">
-                        <label class="form-label semibold" for="exampleInput">Equipo</label>
-                        <select id="tipoequipo_id" name="tipoequipo_id" class="form-control">
-
-                        </select>
-                    </fieldset>
-
-                    <fieldset class="form-group">
-                        <label class="form-label semibold" for="exampleInput">Area</label>
-                        <select id="area_id" name="area_id" class="form-control">
-
-                        </select>
-                    </fieldset>
 
                     <!-- <div class="form-group">
                         <label class="form-label" for="rol_id">Rol</label>

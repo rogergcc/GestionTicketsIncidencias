@@ -38,7 +38,7 @@
 					<thead>
 						<tr>
 
-		
+						<th style="width: 10%;">iD</th>
 							<th style="width: 10%;">Codigo Bien</th>
 							<th style="width: 10%;">Marca</th>
 							<th style="width: 10%;">Trabajador</th>

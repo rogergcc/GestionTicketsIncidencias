@@ -46,7 +46,7 @@ $(document).ready(function(){
                 'pdfHtml5'
                 ],
         "ajax":{
-            url: '../../controller/usuario.php?op=listar',
+            url: '../../controller/usuario.php?op=listartrabajadores',
             type : "post",
             dataType : "json",						
             error: function(e){

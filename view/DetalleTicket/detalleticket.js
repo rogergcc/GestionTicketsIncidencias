@@ -46,19 +46,19 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 $(document).on("click","#btnenviar", function(){
-    var tick_id = getUrlParameter('ID');
-    var usu_id = $('#user_idx').val();
-    var tickd_descrip = $('#tickd_descrip').val();
+    // var tick_id = getUrlParameter('ID');
+    // var usu_id = $('#user_idx').val();
+    // var tickd_descrip = $('#tickd_descrip').val();
 
-    if ($('#tickd_descrip').summernote('isEmpty')){
-        swal("Advertencia!", "Falta Descripción", "warning");
-    }else{
-        $.post("../../controller/ticket.php?op=insertdetalle", { tick_id:tick_id,usu_id:usu_id,tickd_descrip:tickd_descrip}, function (data) {
-            listardetalle(tick_id);
-            $('#tickd_descrip').summernote('reset');
-            swal("Correcto!", "Registrado Correctamente", "success");
-        }); 
-    }
+    // if ($('#tickd_descrip').summernote('isEmpty')){
+    //     swal("Advertencia!", "Falta Descripción", "warning");
+    // }else{
+    //     $.post("../../controller/ticket.php?op=insertdetalle", { tick_id:tick_id,usu_id:usu_id,tickd_descrip:tickd_descrip}, function (data) {
+    //         listardetalle(tick_id);
+    //         $('#tickd_descrip').summernote('reset');
+    //         swal("Correcto!", "Registrado Correctamente", "success");
+    //     }); 
+    // }
 });
 
 $(document).on("click","#btncerrarticket", function(){
@@ -110,9 +110,15 @@ function listardetalle(tick_id){
         $('#tickd_descripusu').summernote ('code',data.tick_descrip);
 
         console.log( data.tick_estado_texto);
+
+        if (data.calificado == 1){
+            $('#pnldetalle').hide();
+        }
+
         if (data.tick_estado_texto == "Cerrado"){
             $('#pnldetalle').hide();
         }
+        
     }); 
 }
 
