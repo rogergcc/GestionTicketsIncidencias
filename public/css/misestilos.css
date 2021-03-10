@@ -18,3 +18,24 @@
   -ms-filter: blur(2px);
   filter: blur(2px); */
 }
+
+#login_form > div.img-muni {
+  display: flex;
+  justify-content: center;
+}
+
+#login_form > div.img-muni > img {
+  width: 120px;
+  height: auto;
+  margin: auto;
+}
+
+.img-muni {
+  display: flex;
+  justify-content: center;
+}
+
+#login_form > div.sign-avatar {
+  width: 70px;
+  height: auto;
+}

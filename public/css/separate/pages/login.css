@@ -14,11 +14,12 @@
   background: #fff;
   border: solid 1px #d8e2e7;
   -webkit-border-radius: 5px;
-          border-radius: 5px;
+  border-radius: 5px;
   padding: 20px;
   font-size: 1rem /*16*/;
   position: relative;
 }
+
 .sign-box .sign-avatar {
   width: 100px;
   height: 100px;
@@ -28,13 +29,13 @@
   display: block;
   width: 100%;
   -webkit-border-radius: 50%;
-          border-radius: 50%;
+  border-radius: 50%;
 }
 .sign-box .sign-avatar.no-photo {
   border: solid 2px #c5d6de;
   text-align: center;
   -webkit-border-radius: 50%;
-          border-radius: 50%;
+  border-radius: 50%;
   line-height: 96px;
   color: #c5d6de;
   font-size: 3.125rem /*50/16*/;

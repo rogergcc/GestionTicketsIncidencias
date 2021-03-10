@@ -9,6 +9,7 @@ function init(){
 function guardaryeditar(e){
     e.preventDefault();
     var formData = new FormData($("#usuario_form")[0]);
+    console.log('FormDAta=> ',formData);
     if ($('#codigo_bien').val()=='' ){
         swal("Advertencia!", "Campos Vacios", "warning");
     }else{
